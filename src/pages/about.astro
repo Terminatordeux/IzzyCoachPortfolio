@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="A propos"
+				tagline="Merci d'être passé. Lisez ci-dessous pour en savoir plus sur moi-même et mon parcours."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/profil.jpg"
+					alt="Jeanine White at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Mon parcours</h2>
+				<div class="content">
+					<p>
+						En tant que coach sportive diplômée d'État, je suis passionnée par le bien-être physique et mental de mes clients. Mon parcours académique comprend l'obtention d'une licence en sciences du sport à l'Université de Paris, ainsi qu'un diplôme de coach sportif délivré par l'Institut National de Formation et d'Application. J'ai également suivi des formations spécialisées en nutrition et en techniques d'entraînement avancées.
+						</p>
+						<p>
+						Fort de plusieurs années d'expérience en tant que coach sportive, j'ai eu l'opportunité de travailler avec diverses populations, des débutants aux athlètes confirmés. J'ai développé une approche personnalisée, axée sur les objectifs spécifiques de chaque individu, en combinant des exercices variés et stimulants pour maximiser les résultats. Mon expertise couvre un large éventail de disciplines, notamment la musculation, le cardio-training, le Pilates et le yoga.
+						</p>
+						<p>
+						Je crois fermement en l'importance d'une approche holistique de la remise en forme. En plus de vous aider à atteindre vos objectifs physiques, je vous accompagnerai également dans l'adoption de saines habitudes de vie, y compris une alimentation équilibrée et une gestion du stress. Mon objectif est de vous fournir les outils nécessaires pour atteindre une harmonie entre votre corps et votre esprit, afin que vous puissiez profiter d'une vie active et épanouissante.
+						</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>Ecole du bouge ton fiac de toulouse</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>officia unde omnis</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
